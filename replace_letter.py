@@ -3,15 +3,14 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv('method.env')
-
 DATABASE_LOGIN  = os.getenv('DATABASE_LOGIN')
 YA_PASSWORD = os.getenv('YA_PASSWORD')
 
-letter = """
-From 
-To
-Subject
-Content-Type: text/plain; charset="UTF-8
+letter = """\
+From: devmanorg@yandex.ru
+To: anta01@yandex.ru
+Subject: Приглашение
+Content-Type: text/plain; charset="UTF-8;
 
 Привет, {friend_name}! {my_name} приглашает тебя на сайт {website}!
 {website} — это новая версия онлайн-курса по программированию. 
