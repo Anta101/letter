@@ -5,10 +5,11 @@ from dotenv import load_dotenv
 load_dotenv('method.env')
 DATABASE_LOGIN  = os.getenv('DATABASE_LOGIN')
 YA_PASSWORD = os.getenv('YA_PASSWORD')
-
+FROM = os.getenv('FROM')
+TO = os.getenv('TO')
 letter = """\
-From: devmanorg@yandex.ru
-To: anta01@yandex.ru
+FROM
+TO
 Subject: Приглашение
 Content-Type: text/plain; charset="UTF-8;
 
@@ -26,10 +27,10 @@ Content-Type: text/plain; charset="UTF-8;
 Все проекты — они же решение наших задачек — можно разместить на твоём GitHub. Работодатели такое оценят. 
 Регистрируйся → {website} 
 На курсы, которые еще не вышли, можно подписаться и получить уведомление
-о релизе сразу на имейл.""".format(friend_name ='Ivan', my_name ='Devman', website ='https://dvmn.org/profession-ref-program/')
+о релизе сразу на имейл.""".format(friend_name ='Иван', my_name ='Devman', website ='https://dvmn.org/profession-ref-program/')
 letter = letter.encode('UTF-8')
 server = smtplib.SMTP_SSL('smtp.yandex.ru:465')
 server.login(DATABASE_LOGIN, YA_PASSWORD)
-server.sendmail(DATABASE_LOGIN, 'anta01@yandex.ru', letter)
+server.sendmail(DATABASE_LOGIN, TO, letter)
 
 server.quit()
