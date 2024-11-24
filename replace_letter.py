@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 load_dotenv('method.env')
 DATABASE_LOGIN  = os.getenv('DATABASE_LOGIN')
 YA_PASSWORD = os.getenv('YA_PASSWORD')
-
 letter = """\
 From: {from_email}
 To: {to_email}
 Subject: Приглашение
 Content-Type: text/plain; charset="UTF-8;
+
 Привет, {friend_name}! {my_name} приглашает тебя на сайт {website}!
 {website} — это новая версия онлайн-курса по программированию. 
 Изучаем Python и не только. Решаем задачи. Получаем ревью от преподавателя. 
